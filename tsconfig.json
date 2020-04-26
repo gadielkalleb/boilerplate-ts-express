@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "skipLibCheck": true,
+    "target": "es2016",
+    "module": "commonjs",
+    "lib": ["es6", "dom", "esnext"],
+    "outDir": "dist",
+    "noImplicitAny": false,
+  },
+
+  "exclude": [
+    "node_modules",
+    "build",
+  ],
+
+}
