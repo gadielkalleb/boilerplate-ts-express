@@ -1,5 +1,7 @@
-import QuestionsController from './questions'
+import QuestionsController from './Questions'
+import AnswersControlller from './Answers'
 
 export {
-  QuestionsController
+  QuestionsController,
+  AnswersControlller
 }

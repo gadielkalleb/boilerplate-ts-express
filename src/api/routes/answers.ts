@@ -1,18 +1,18 @@
 import { Router } from "express";
 import * as asyncHandler from "express-async-handler";
-import { QuestionsController } from "../../services";
-import { QuestionModel } from "../../models";
+import { AnswersControlller } from "../../services";
+import { AnswersModel } from "../../models";
 
-const Question = new QuestionsController(QuestionModel);
+const Answers = new AnswersControlller(AnswersModel);
 
 const router = Router();
 
 router.get(
   "/",
   asyncHandler(async (req, res, next) => {
-    const questionsList = await Question.getAll();
+    const answersList = await Answers.getAll();
     return res.json({
-      questionsList,
+      answersList,
     });
   })
 );
