@@ -1,5 +1,5 @@
-import QuestionsModel from './questions'
+import QuestionsController from './questions'
 
 export {
-  QuestionsModel
+  QuestionsController
 }

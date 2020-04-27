@@ -1,11 +1,20 @@
 import { Router } from "express";
+import * as asyncHandler from "express-async-handler";
+import { QuestionsController } from "../../services";
+import { QuestionModel } from "../../models";
 
-const router = Router()
+const Question = new QuestionsController(QuestionModel);
 
-router.get('/', (req, res, next) => {
-  return res.json({
-    name: 'gadiel kalleb'
+const router = Router();
+
+router.get(
+  "/",
+  asyncHandler(async (req, res, next) => {
+    const questionsList = await Question.getQuestions();
+    return res.json({
+      questionsList,
+    });
   })
-})
+);
 
-export default router
+export default router;
