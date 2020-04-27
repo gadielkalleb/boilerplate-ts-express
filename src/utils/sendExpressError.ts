@@ -1,13 +1,17 @@
 import { Response } from 'express'
+import ErrorHandler from './ErrorHandler'
 
-export default function sendExpressError (
-  { statusCode, message }: { statusCode?: number; message: string },
-  res: Response
-) {
-  statusCode = !statusCode ? 500 : statusCode
-  res.status(statusCode).json({
-    status: 'error',
-    statusCode,
-    message
-  })
+export class ExpressError {
+
+  sendError(error: ErrorHandler, res: Response): Response {
+    const { statusCode, message } = error
+    return res.status(statusCode ?? 500).json({
+      status: 'error',
+      statusCode,
+      message
+    })
+  }
+
 }
+
+export default new ExpressError()

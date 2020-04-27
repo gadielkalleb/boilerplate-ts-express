@@ -1,6 +1,12 @@
 import { Router } from 'express'
-import router from './router'
 
-const route = Router()
+import questions from './routes/questions'
 
-export default router(route)
+const router = Router()
+
+router.get('/', (req, res, next) => (res.status(200).send('hello word')))
+router.use('/questions', questions)
+
+export default router
+
+

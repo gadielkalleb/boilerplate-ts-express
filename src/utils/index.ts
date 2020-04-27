@@ -1,7 +1,7 @@
-import sendExpressError from './sendExpressError'
+import SendExpressError from './SendExpressError'
 import ErrorHandler from './ErrorHandler'
 
 export {
-  sendExpressError,
+  SendExpressError,
   ErrorHandler
 }
